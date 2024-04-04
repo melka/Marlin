@@ -21,14 +21,14 @@
  */
 #pragma once
 
-#define CONFIG_EXAMPLES_DIR "Creality/CR-10 V2"
+#define CONFIG_EXAMPLES_DIR "Creality/CR-10 V3"
 
 /**
- * Creality CD-10 V2 options
+ * Creality CR-10 V3 options
  */
 
 // Is the BLTouch option installed?
-#define CR10V2_BLTOUCH
+#define CR10V3_BLTOUCH
 
 /**
  * Configuration.h
@@ -70,7 +70,7 @@
 // @section info
 
 // Author info of this build printed to the host during boot and M115
-#define STRING_CONFIG_H_AUTHOR "fran6p, CR-10 V2)" // Who made the changes.
+#define STRING_CONFIG_H_AUTHOR "fran6p, CR-10 V3)" // Who made the changes.
 //#define CUSTOM_VERSION_FILE Version.h // Path from the root directory (no quotes)
 
 // @section machine
@@ -134,7 +134,7 @@
 //#define BLUETOOTH
 
 // Name displayed in the LCD "Ready" message and Info menu
-#define CUSTOM_MACHINE_NAME "CR-10 V2"
+#define CUSTOM_MACHINE_NAME "CR-10 V3"
 
 // Printer's unique ID, used by some programs to differentiate between machines.
 // Choose your own or use a service like https://www.uuidgenerator.net/version4
@@ -700,7 +700,7 @@
   //#define PID_PARAMS_PER_HOTEND // Use separate PID parameters for each extruder (useful for mismatched extruders)
                                   // Set/get with G-code: M301 E[extruder number, 0-2]
 
-  // CR-10 V2
+  // CR-10 V3
   #if ENABLED(PID_PARAMS_PER_HOTEND)
     // Specify up to one value per hotend here, according to your setup.
     // If there are fewer values, the last one applies to the remaining hotends.
@@ -798,7 +798,7 @@
 
   // 120V 250W silicone heater into 4mm borosilicate (MendelMax 1.5+)
   // from FOPDT model - kp=.39 Tp=405 Tdead=66, Tc set to 79.2, aggressive factor of .15 (vs .1, 1, 10)
-  // CR-10 V2 24V 240W
+  // CR-10 V3 24V 240W
   #define DEFAULT_bedKp 690.34
   #define DEFAULT_bedKi 111.47
   #define DEFAULT_bedKd 1068.83
@@ -1376,7 +1376,7 @@
 
 // Force the use of the probe for Z-axis homing
 //#define USE_PROBE_FOR_Z_HOMING
-#if ENABLED(CR10V2_BLTOUCH)
+#if ENABLED(CR10V3_BLTOUCH)
   #define USE_PROBE_FOR_Z_HOMING
 #endif
 
@@ -1395,7 +1395,7 @@
  */
 //#define Z_MIN_PROBE_PIN -1
 
-#if ENABLED(CR10V2_BLTOUCH)
+#if ENABLED(CR10V3_BLTOUCH)
   #define Z_MIN_PROBE_PIN 19
 #endif
 
@@ -1439,7 +1439,7 @@
 /**
  * The BLTouch probe uses a Hall effect sensor and emulates a servo.
  */
-#if ENABLED(CR10V2_BLTOUCH)
+#if ENABLED(CR10V3_BLTOUCH)
   #define BLTOUCH
 #endif
 
@@ -1716,7 +1716,7 @@
 //#define PROBE_OFFSET_ZMAX  20   // (mm)
 
 // Enable the M48 repeatability test to test probe accuracy
-#if ENABLED(CR10V2_BLTOUCH)
+#if ENABLED(CR10V3_BLTOUCH)
   #define Z_MIN_PROBE_REPEATABILITY_TEST
 #endif
 
@@ -1939,7 +1939,7 @@
 #if ENABLED(FILAMENT_RUNOUT_SENSOR)
   #define FIL_RUNOUT_ENABLED_DEFAULT true // Enable the sensor on startup. Override with M412 followed by M500.
   #define NUM_RUNOUT_SENSORS   1          // Number of sensors, up to one per extruder. Define a FIL_RUNOUT#_PIN for each.
-  #define FIL_RUNOUT_PIN 2 // Creality CR-10 V2 stock sensor
+  #define FIL_RUNOUT_PIN 2 // Creality CR-10 V3 stock sensor
 
   #define FIL_RUNOUT_STATE     LOW        // Pin state indicating that filament is NOT present.
   #define FIL_RUNOUT_PULLUP               // Use internal pullup for filament runout pins.
@@ -2079,7 +2079,7 @@
  */
 //#define AUTO_BED_LEVELING_3POINT
 //#define AUTO_BED_LEVELING_LINEAR
-#if ENABLED(CR10V2_BLTOUCH)
+#if ENABLED(CR10V3_BLTOUCH)
   #define AUTO_BED_LEVELING_BILINEAR
 #endif
 //#define AUTO_BED_LEVELING_UBL
@@ -2096,7 +2096,7 @@
  * these options to restore the prior leveling state or to always enable
  * leveling immediately after G28.
  */
-#if ENABLED(CR10V2_BLTOUCH)
+#if ENABLED(CR10V3_BLTOUCH)
   #define RESTORE_LEVELING_AFTER_G28
 #endif
 //#define ENABLE_LEVELING_AFTER_G28
@@ -2252,7 +2252,7 @@
  * Add a bed leveling sub-menu for ABL or MBL.
  * Include a guided procedure if manual probing is enabled.
  */
-#if ENABLED(CR10V2_BLTOUCH)
+#if ENABLED(CR10V3_BLTOUCH)
   #define LCD_BED_LEVELING
 #endif
 
@@ -2321,7 +2321,7 @@
  * - Allows Z homing only when XY positions are known and trusted.
  * - If stepper drivers sleep, XY homing may be required again before Z homing.
  */
-#if ENABLED(CR10V2_BLTOUCH)
+#if ENABLED(CR10V3_BLTOUCH)
   #define Z_SAFE_HOMING
 #endif
 
